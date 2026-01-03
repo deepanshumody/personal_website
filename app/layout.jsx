@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Instrument_Serif, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -24,7 +25,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${instrumentSerif.variable} ${spaceGrotesk.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
