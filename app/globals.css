@@ -229,11 +229,28 @@ a:hover {
   padding: 28px;
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.7);
+  display: grid;
+  gap: 18px;
 }
 
 .hero-card-inner h2 {
   margin-top: 0;
   font-family: var(--font-serif), "Times New Roman", serif;
+}
+
+.hero-portrait {
+  position: relative;
+  width: clamp(140px, 45vw, 200px);
+  aspect-ratio: 1;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(240, 138, 75, 0.35);
+  box-shadow: 0 18px 40px rgba(27, 27, 31, 0.16);
+  background: linear-gradient(150deg, rgba(240, 138, 75, 0.22), rgba(43, 111, 108, 0.18));
+}
+
+.hero-portrait img {
+  object-fit: cover;
 }
 
 .hero-card-header {

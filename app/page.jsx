@@ -1,3 +1,6 @@
+import Image from "next/image";
+import profileImage from "./profile.jpeg";
+
 const profile = {
   name: "Deepanshu Mody",
   title: "Stats & AI/ML Intern @ Pfizer | M.S. Data Science @ NYU",
@@ -6,6 +9,8 @@ const profile = {
     "Final-year M.S. Data Science student at NYU with industry experience building LLM-based and agentic AI systems. My research spans ML, transformers, and multimodal models, with interests in retrieval, interpretability and tokenization.",
   location: "New York, NY",
   email: "dm6262@nyu.edu",
+  image: profileImage,
+  imageAlt: "Portrait of Deepanshu Mody",
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/deepanshu-mody-1202921b7" },
     { label: "GitHub", href: "https://github.com/deepanshumody" }
@@ -195,10 +200,16 @@ export default function Home() {
           </div>
           <div className="hero-card">
             <div className="hero-card-inner">
-              <div className="hero-card-header">
-                <h2>Now</h2>
-                <span className="status-pill">Active</span>
+              <div className="hero-portrait">
+                <Image
+                  src={profile.image}
+                  alt={profile.imageAlt}
+                  fill
+                  sizes="(max-width: 720px) 160px, 200px"
+                  priority
+                />
               </div>
+              
               <p>
                 Building LLM agentic workflows and retrieval systems.
               </p>
