@@ -176,8 +176,7 @@ export default function Home() {
           <div className="hero-text">
             <div className="badge">{profile.title}</div>
             <h1>
-              Building LLM-based and agentic AI systems across NLP, multimodal
-              ML, and applied research.
+              Building LLM-based and agentic AI systems.
             </h1>
             <p className="lede">{profile.intro}</p>
             <div className="hero-actions">
@@ -208,10 +207,7 @@ export default function Home() {
                   <span className="mini-label">Focus</span>
                   <span className="mini-value">Agentic LLM systems</span>
                 </div>
-                <div>
-                  <span className="mini-label">Systems</span>
-                  <span className="mini-value">RAG + knowledge graphs</span>
-                </div>
+                
                 <div>
                   <span className="mini-label">Domains</span>
                   <span className="mini-value">Healthcare + enterprise data</span>
@@ -366,10 +362,7 @@ export default function Home() {
                 <span className="mini-label">Email</span>
                 <a href={`mailto:${profile.email}`}>{profile.email}</a>
               </div>
-              <div>
-                <span className="mini-label">Phone</span>
-                <a href={`tel:${profile.phone}`}>{profile.phone}</a>
-              </div>
+              
               <div>
                 <span className="mini-label">Profiles</span>
                 <div className="link-row">
