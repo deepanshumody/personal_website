@@ -1,16 +1,22 @@
 import Image from "next/image";
-import profileImage from "./profile.jpeg";
+import profileImage from "../profile.jpeg";
+
+export const metadata = {
+  title: "Deepanshu Mody | Application",
+  description: "Job application profile for Deepanshu Mody."
+};
 
 const profile = {
   name: "Deepanshu Mody",
-  title: "Stats & AI/ML Intern @ Pfizer | M.S. Data Science @ NYU",
-  focus: "LLM systems, applied ML, multimodal research",
+  title: "ML Engineer / Applied Scientist Candidate",
+  focus: "LLM systems, RAG, multimodal ML, knowledge graphs",
   intro:
-    "Final-year M.S. Data Science student at NYU with industry experience building LLM-based and agentic AI systems. My research spans ML, transformers, and multimodal models, with interests in retrieval, interpretability and tokenization.",
+    "Final-year M.S. Data Science student at NYU with industry experience building LLM and retrieval systems. Seeking applied ML roles where I can ship reliable, measurable AI products.",
   location: "New York, NY",
   email: "dm6262@nyu.edu",
   image: profileImage,
   imageAlt: "Portrait of Deepanshu Mody",
+  resumeHref: "/resume.pdf",
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/deepanshu-mody-1202921b7" },
     { label: "GitHub", href: "https://github.com/deepanshumody" }
@@ -19,26 +25,44 @@ const profile = {
 
 const highlights = [
   {
-    label: "Core focus",
-    value: "LLMs, applied ML, multimodal AI research"
+    label: "LLM accuracy",
+    value: "92.0 token-level F1 on 1.2k manuals QA"
   },
   {
-    label: "Tooling",
-    value: "Python, PyTorch, Neo4j, LangGraph, LangChain"
+    label: "Latency",
+    value: "p50 <200 ms RAG pipeline on NVIDIA L4"
   },
   {
-    label: "Collaboration",
-    value: "Open to research, internships, and applied ML work"
+    label: "Systems impact",
+    value: "1.7x GEMM throughput, -34% ResNet-50 latency"
   }
 ];
 
 const heroTags = [
-  "Agentic AI",
+  "ML Engineer",
+  "Applied Scientist",
+  "LLM Engineer",
   "RAG systems",
   "Knowledge graphs",
-  "Multimodal ML",
-  "Model evaluation",
-  "Tokenization"
+  "Model evaluation"
+];
+
+const fitAreas = [
+  {
+    title: "Product-minded ML",
+    detail:
+      "Translate research into production workflows with measurable accuracy, latency, and reliability."
+  },
+  {
+    title: "Grounded LLMs",
+    detail:
+      "Build RAG systems that blend hybrid retrieval, reranking, and knowledge graphs to reduce hallucinations."
+  },
+  {
+    title: "Systems + research",
+    detail:
+      "Comfortable across GPU-aware optimization, experimentation, and multimodal research pipelines."
+  }
 ];
 
 const experience = [
@@ -73,52 +97,24 @@ const experience = [
   }
 ];
 
-const research = [
+const projects = [
   {
-    role: "Capstone Project (Advisor: Dr. Chris Tanner)",
-    org: "Kensho",
-    location: "Remote",
-    dates: "Sep 2025 - Present",
-    details: [
-      "Designed and implemented Markov Chain Monte Carlo and Reinforcement Learning approaches for globally optimizing BPE tokenization (entropy + compression objectives) training on the MiniPile corpus."
-    ]
-  },
-  {
-    role: "Graduate Research Assistant (Advisor: Dr. Yiqiu Shen)",
-    org: "NYU Grossman School of Medicine",
-    location: "New York, NY",
-    dates: "Apr 2025 - Jun 2025",
-    details: [
-      "Curated a longitudinal imaging cohort of ~2k abdominal CT scans from ~80k patients with acute pancreatitis, linked to 3-year follow-up data; built a DICOM-to-NIfTI pipeline with automated PHI stripping.",
-      "Prototyped a deep-survival model on 80k MRIs that fuses 3-D ResNet radiomics with clinical labs (CRP, BUN) in a Cox/DeepSurv head to predict time-to-chronic progression; pilot C-index 0.81 vs 0.72 for Cox on 5-fold patient splits."
-    ]
-  },
-  {
-    role: "Research Intern (Advisor: Dr. Daisuke Kihara)",
-    org: "Purdue University",
-    location: "West Lafayette, IN",
-    dates: "Jun 2022 - Dec 2022",
-    details: [
-      "Developed two GNNs (GCN, GNN-DTI) for RNA metal-ion binding, gaining +6.2 pp ROC-AUC over a CNN on 6.4k PDB structures.",
-      "Built a GPU-accelerated PyG stack on SLURM and a DGL graph-builder that cut preprocessing 5x and streamed 1.1M edges/s, enabling 128-config sweeps overnight."
-    ]
-  }
-];
-
-const publications = [
-  {
-    title: "Auto Encoders for Communication-Efficient Distributed Learning",
-    venue: "AAAI Deployable AI Workshop",
-    dates: "2023",
+    title: "Multi-agent LLM workflow",
+    stack: "LangGraph, Gemini Flash, DeepSeek-R1",
     detail:
-      "Proposed a novel method using autoencoders to optimize distributed learning and presented at the workshop."
+      "Designed a multi-agent system with tool use, reliability checks, and latency benchmarking for production readiness."
   },
   {
-    title: "Validity of Machine Learning-Based COVID-19 Prediction",
-    venue: "PLOS ONE",
-    dates: "2025",
+    title: "RAG QA at scale",
+    stack: "LangChain, PyTorch, NVIDIA L4",
     detail:
-      "Benchmarked 7 hematology-based prognostic models on 195k patient records across Brazil, Italy, and Western Europe; uncovered ~20% AUROC drop in cross-continental transfer and released an open-source validation toolkit."
+      "Shipped a hybrid retrieval pipeline (BM25 + vectors + cross-encoder) hitting 92.0 token-level F1."
+  },
+  {
+    title: "Knowledge graph analytics",
+    stack: "Neo4j, graph algorithms",
+    detail:
+      "Modeled drug-target-indication evidence with PageRank and community clustering for insight discovery."
   }
 ];
 
@@ -144,36 +140,35 @@ const education = [
 
 const skills = [
   "Python",
-  "SQL",
   "PyTorch",
-  "Neo4j",
   "LangChain",
   "LangGraph",
+  "Neo4j",
+  "SQL",
   "C++",
-  "C",
-  "Java",
-  "Keras",
-  "Django",
-  "Flask",
   "AWS",
   "Azure",
   "Git",
+  "Keras",
+  "Django",
+  "Flask",
+  "Java",
   "LaTeX"
 ];
 
-export default function Home() {
+export default function ApplicationPage() {
   return (
     <div className="page">
       <header className="nav">
         <div className="brand">{profile.name}</div>
         <nav className="nav-links">
-          <a href="/application">Application</a>
+          <a href="/">Research profile</a>
           <a href="/blog">Blog</a>
-          <a href="#research">Research</a>
+          <a href="#fit">Role fit</a>
           <a href="#experience">Experience</a>
-          <a href="#publications">Publications</a>
-          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -182,13 +177,11 @@ export default function Home() {
         <section className="hero">
           <div className="hero-text">
             <div className="badge">{profile.title}</div>
-            <h1>
-              Building LLM-based and agentic AI systems.
-            </h1>
+            <h1>Building production-ready LLM systems.</h1>
             <p className="lede">{profile.intro}</p>
             <div className="hero-actions">
-              <a className="btn primary" href="#research">
-                Explore research
+              <a className="btn primary" href={profile.resumeHref} download>
+                Download resume
               </a>
               <a className="btn ghost" href={`mailto:${profile.email}`}>
                 Contact me
@@ -211,19 +204,21 @@ export default function Home() {
                   priority
                 />
               </div>
-              
+              <div className="hero-card-header">
+                <h2>Application snapshot</h2>
+                <span className="status-pill">Open to roles</span>
+              </div>
               <p>
-                Building LLM agentic workflows and retrieval systems.
+                Seeking ML engineer and applied scientist roles focused on LLM products.
               </p>
               <div className="mini-grid">
                 <div>
-                  <span className="mini-label">Focus</span>
-                  <span className="mini-value">Agentic LLM systems</span>
+                  <span className="mini-label">Target roles</span>
+                  <span className="mini-value">ML Engineer, Applied Scientist, Data Scientist</span>
                 </div>
-                
                 <div>
-                  <span className="mini-label">Domains</span>
-                  <span className="mini-value">Healthcare + enterprise data</span>
+                  <span className="mini-label">Strengths</span>
+                  <span className="mini-value">RAG, evals, knowledge graphs</span>
                 </div>
               </div>
               <div className="chip-row">
@@ -246,29 +241,17 @@ export default function Home() {
           ))}
         </section>
 
-        <section id="research" className="section">
+        <section id="fit" className="section">
           <div className="section-title">
-            <h2>Research</h2>
-            <p>Academic and capstone work spanning tokenization, imaging, and GNNs.</p>
+            <h2>Role fit</h2>
+            <p>What I bring to applied ML and AI product teams.</p>
           </div>
-          <div className="timeline">
-            {research.map((item) => (
-              <article key={item.role} className="timeline-item">
-                <div className="timeline-year">{item.dates}</div>
-                <div className="timeline-body">
-                  <div className="card-header">
-                    <h3>{item.role}</h3>
-                    <span className="meta-line">
-                      {item.org} | {item.location}
-                    </span>
-                  </div>
-                  <ul className="detail-list">
-                    {item.details.map((detail) => (
-                      <li key={detail}>{detail}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
+          <div className="card-grid">
+            {fitAreas.map((item) => (
+              <div key={item.title} className="card">
+                <h3>{item.title}</h3>
+                <p className="detail-text">{item.detail}</p>
+              </div>
             ))}
           </div>
         </section>
@@ -276,7 +259,7 @@ export default function Home() {
         <section id="experience" className="section">
           <div className="section-title">
             <h2>Experience</h2>
-            <p>Industry roles focused on applied ML, retrieval systems, and systems work.</p>
+            <p>Industry roles focused on shipping ML products and systems.</p>
           </div>
           <div className="timeline">
             {experience.map((item) => (
@@ -300,23 +283,32 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="publications" className="section">
+        <section id="projects" className="section">
           <div className="section-title">
-            <h2>Publications & talks</h2>
-            <p>Selected publications and workshop presentations.</p>
+            <h2>Selected projects</h2>
+            <p>Proof of work across LLM systems, retrieval, and graph analytics.</p>
           </div>
-          <div className="timeline">
-            {publications.map((item) => (
-              <article key={item.title} className="timeline-item">
-                <div className="timeline-year">{item.dates}</div>
-                <div className="timeline-body">
-                  <div className="card-header">
-                    <h3>{item.title}</h3>
-                    <span className="meta-line">{item.venue}</span>
-                  </div>
-                  <p className="detail-text">{item.detail}</p>
-                </div>
+          <div className="card-grid">
+            {projects.map((project) => (
+              <article key={project.title} className="card">
+                <h3>{project.title}</h3>
+                <span className="meta-line">{project.stack}</span>
+                <p className="detail-text">{project.detail}</p>
               </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="skills" className="section">
+          <div className="section-title">
+            <h2>Skills</h2>
+            <p>Technical stack spanning ML, systems, and deployment.</p>
+          </div>
+          <div className="tag-list">
+            {skills.map((skill) => (
+              <span key={skill} className="tag">
+                {skill}
+              </span>
             ))}
           </div>
         </section>
@@ -350,24 +342,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="skills" className="section">
-          <div className="section-title">
-            <h2>Skills</h2>
-            <p>Technical stack spanning ML, systems, and deployment.</p>
-          </div>
-          <div className="tag-list">
-            {skills.map((skill) => (
-              <span key={skill} className="tag">
-                {skill}
-              </span>
-            ))}
-          </div>
-        </section>
-
         <section id="contact" className="section">
           <div className="section-title">
             <h2>Contact</h2>
-            <p>Let's discuss research, collaboration, or ML engineering roles.</p>
+            <p>Happy to chat about ML engineering, applied science, or research roles.</p>
           </div>
           <div className="contact">
             <div className="contact-card">
@@ -375,7 +353,6 @@ export default function Home() {
                 <span className="mini-label">Email</span>
                 <a href={`mailto:${profile.email}`}>{profile.email}</a>
               </div>
-              
               <div>
                 <span className="mini-label">Profiles</span>
                 <div className="link-row">
@@ -386,13 +363,19 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+              <div>
+                <span className="mini-label">Resume</span>
+                <a href={profile.resumeHref} download>
+                  Download PDF
+                </a>
+              </div>
             </div>
             <div className="contact-aside">
-              <h3>Research interests</h3>
+              <h3>What I am looking for</h3>
               <ul>
-                <li>LLM systems, agentic workflows, and evaluation</li>
-                <li>Retrieval, knowledge graphs, and data products</li>
-                <li>Multimodal ML in healthcare and interpretability</li>
+                <li>ML engineer or applied scientist roles building LLM products</li>
+                <li>Teams that care about evaluation, latency, and reliability</li>
+                <li>Opportunities in healthcare, enterprise data, or tooling</li>
               </ul>
             </div>
           </div>
